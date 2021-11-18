@@ -40,7 +40,7 @@ class TopAppBarTest {
 
 
     @Test
-    fun rallyTopAppBarTest_currentLabelExists() {
+    fun rallyTopAppBarTest_Accounts_is_selected() {
         val allScreens = RallyScreen.values().toList()
         composeTestRule.setContent {
             RallyTopAppBar(
@@ -50,12 +50,58 @@ class TopAppBarTest {
             )
         }
 
-        composeTestRule.onRoot(useUnmergedTree = true).printToLog("currentLabelExists")
+        composeTestRule.onRoot(useUnmergedTree = true).printToLog("Accounts_is_selected")
 
         composeTestRule
             .onNode(
                 hasText(RallyScreen.Accounts.name.uppercase(Locale.getDefault()))
                         and hasParent(hasContentDescription(RallyScreen.Accounts.name)
+                ),
+                useUnmergedTree = true
+            )
+            .assertExists()
+    }
+
+    @Test
+    fun rallyTopAppBarTest_Bills_is_selected() {
+        val allScreens = RallyScreen.values().toList()
+        composeTestRule.setContent {
+            RallyTopAppBar(
+                allScreens = allScreens,
+                onTabSelected = { },
+                currentScreen = RallyScreen.Bills
+            )
+        }
+
+        composeTestRule.onRoot(useUnmergedTree = true).printToLog("Bills_is_selected")
+
+        composeTestRule
+            .onNode(
+                hasText(RallyScreen.Bills.name.uppercase(Locale.getDefault()))
+                        and hasParent(hasContentDescription(RallyScreen.Bills.name)
+                ),
+                useUnmergedTree = true
+            )
+            .assertExists()
+    }
+
+    @Test
+    fun rallyTopAppBarTest_Overview_is_selected() {
+        val allScreens = RallyScreen.values().toList()
+        composeTestRule.setContent {
+            RallyTopAppBar(
+                allScreens = allScreens,
+                onTabSelected = { },
+                currentScreen = RallyScreen.Overview
+            )
+        }
+
+        composeTestRule.onRoot(useUnmergedTree = true).printToLog("Overview_is_selected")
+
+        composeTestRule
+            .onNode(
+                hasText(RallyScreen.Overview.name.uppercase(Locale.getDefault()))
+                        and hasParent(hasContentDescription(RallyScreen.Overview.name)
                 ),
                 useUnmergedTree = true
             )

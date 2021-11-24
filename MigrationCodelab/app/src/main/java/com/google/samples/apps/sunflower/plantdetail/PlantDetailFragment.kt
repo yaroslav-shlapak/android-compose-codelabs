@@ -33,6 +33,7 @@ import androidx.navigation.fragment.navArgs
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.samples.apps.sunflower.R
+import com.google.samples.apps.sunflower.SunflowerTheme
 import com.google.samples.apps.sunflower.data.Plant
 import com.google.samples.apps.sunflower.databinding.FragmentPlantDetailBinding
 import com.google.samples.apps.sunflower.utilities.InjectorUtils
@@ -109,7 +110,7 @@ class PlantDetailFragment : Fragment() {
             }
 
             composeView.setContent {
-                MaterialTheme {
+                SunflowerTheme {
                     PlantDetailDescription(plantDetailViewModel)
                 }
             }

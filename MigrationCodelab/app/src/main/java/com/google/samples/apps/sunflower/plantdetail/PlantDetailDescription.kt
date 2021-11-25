@@ -38,6 +38,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.text.HtmlCompat
+import com.google.android.material.composethemeadapter.MdcTheme
 import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.SunflowerTheme
 import com.google.samples.apps.sunflower.data.Plant
@@ -126,7 +127,7 @@ private fun PlantWatering(wateringInterval: Int) {
 @Composable
 private fun PlantDetailContentPreview() {
     val plant = Plant("id", "Apple", "description", 3, 30, "")
-    SunflowerTheme {
+    MdcTheme {
         PlantDetailContent(plant)
     }
 }
@@ -134,7 +135,7 @@ private fun PlantDetailContentPreview() {
 @Preview
 @Composable
 private fun PlantNamePreview() {
-    SunflowerTheme {
+    MdcTheme {
         PlantName(name = "Apple")
     }
 }
@@ -142,7 +143,7 @@ private fun PlantNamePreview() {
 @Preview
 @Composable
 private fun PlantWateringPreview() {
-    SunflowerTheme {
+    MdcTheme {
         PlantWatering(wateringInterval = 7)
     }
 }
@@ -150,7 +151,7 @@ private fun PlantWateringPreview() {
 @Preview
 @Composable
 private fun PlantDescriptionPreview() {
-    SunflowerTheme {
+    MdcTheme {
         PlantDescription(description = "HTML<br><br>description")
     }
 }
